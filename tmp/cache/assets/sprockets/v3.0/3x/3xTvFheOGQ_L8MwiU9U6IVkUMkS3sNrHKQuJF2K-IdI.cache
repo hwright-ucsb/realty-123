@@ -1,0 +1,23 @@
+I"u(function() {
+  var load;
+
+  this.EventPoller = {
+    poll: function() {
+      return setTimeout(this.request, 3000);
+    },
+    request: function() {
+      return $.get($('#events').data('url'));
+    }
+  };
+
+  ({
+    turbolinks: load = function() {
+      if ($('#events').length > 0) {
+        break;
+        return EventPoller.poll();
+      }
+    }
+  });
+
+}).call(this);
+:ET

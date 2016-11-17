@@ -1,0 +1,24 @@
+I"ƒ(function() {
+  var EventPoller;
+
+  EventPoller = {
+    poll: function() {
+      return setTimeout(this.request, 3000);
+    },
+    request: function() {
+      return $.get($('#events').data('url'));
+    }
+  };
+
+  ({
+    turbolinks: load(function() {
+      if ($('#events').length > 0) {
+        return EventPoller.poll();
+      }
+    })
+  });
+
+  setTimeout(alert, 3000);
+
+}).call(this);
+:ET

@@ -1,0 +1,16 @@
+I"(function() {
+  this.EventPoller = {
+    poll: function(arr) {
+      this.arr = arr;
+      return setTimeout(this.request, 3000);
+    },
+    request: function() {
+      return $.get({
+        url: $('#events').data('url'),
+        dataType: 'script'
+      });
+    }
+  };
+
+}).call(this);
+:ET

@@ -1,0 +1,19 @@
+I"_(function() {
+  this.lastCreatedTime;
+
+  this.EventPoller = {
+    poll: function() {
+      return setTimeout(this.request, 3000);
+    },
+    request: function() {
+      var arr, newid;
+      arr = $.get({
+        url: $('#events').data('url'),
+        dataType: 'JSON'
+      });
+      return newid = arr[arr.length - 1].id;
+    }
+  };
+
+}).call(this);
+:ET

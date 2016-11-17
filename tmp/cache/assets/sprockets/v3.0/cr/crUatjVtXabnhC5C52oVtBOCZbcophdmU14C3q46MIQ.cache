@@ -1,0 +1,5 @@
+I">(function() {
+  setTimeout(alert, 3000);
+
+}).call(this);
+:ET

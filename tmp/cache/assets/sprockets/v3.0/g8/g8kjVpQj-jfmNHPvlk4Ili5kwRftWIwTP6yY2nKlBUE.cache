@@ -1,0 +1,22 @@
+I"_(function() {
+  var EventPoller;
+
+  EventPoller = {
+    poll: function() {
+      return setTimeout(this.request, 3000);
+    },
+    request: function() {
+      return $.get($('#map').data('url'));
+    }
+  };
+
+  JQuery(function() {
+    if ($('#map').length > 0) {
+      return EventPoller.poll();
+    }
+  });
+
+  setTimeout(alert, 3000);
+
+}).call(this);
+:ET

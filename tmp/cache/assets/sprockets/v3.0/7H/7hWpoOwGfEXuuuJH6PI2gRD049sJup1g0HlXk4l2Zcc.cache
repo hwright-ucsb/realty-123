@@ -1,0 +1,22 @@
+I"k(function() {
+  var EventPoller, load;
+
+  EventPoller = {
+    poll: function() {
+      return setTimeout(this.request, 3000);
+    },
+    request: function() {
+      return $.get($('#events').data('url'));
+    }
+  };
+
+  ({
+    turbolinks: load = function() {
+      if ($('#map').length > 0) {
+        return EventPoller.poll();
+      }
+    }
+  });
+
+}).call(this);
+:ET
